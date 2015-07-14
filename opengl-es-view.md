@@ -6,11 +6,11 @@
 
 Android 平台提供的 OpenGL ES API 主要定义在包android.opengl,javax.microedition.khronos.egl,javax.microedition.khronos.opengles,java.nio 等几个包中，其中类 GLSurfaceView 为这些包中的核心类：
 
-* 起到连接 OpenGL ES与Android 的 View 层次结构之间的桥梁作用。
-* 使得 Open GL ES 库适应于 Anndroid 系统的 Activity 生命周期。
-* 使得选择合适的 Frame buffer 像素格式变得容易。
-* 创建和管理单独绘图线程以达到平滑动画效果。
-* 提供了方便使用的调试工具来跟踪 OpenGL ES 函数调用以帮助检查错误。  
+- 起到连接 OpenGL ES与Android 的 View 层次结构之间的桥梁作用。
+- 使得 Open GL ES 库适应于 Anndroid 系统的 Activity 生命周期。
+- 使得选择合适的 Frame buffer 像素格式变得容易。
+- 创建和管理单独绘图线程以达到平滑动画效果。
+- 提供了方便使用的调试工具来跟踪 OpenGL ES 函数调用以帮助检查错误。  
 
 因此编写 OpenGL ES 应用的起始点是从类 GLSurfaceView 开始，设置 GLSurfaceView  只需调用一个方法来设置 OpenGLView 用到的 GLSurfaceView.Renderer.   
 
@@ -31,17 +31,17 @@ public void onDrawFrame(GL10 gl)
 public void onSurfaceChanged(GL10 gl, int width, int height)  
 ```  
 
-* onSurfaceCreated:在这个方法中主要用来设置一些绘制时不常变化的参数，比如：背景色，是否打开 z-buffer 等。
-* onDrawFrame:定义实际的绘图操作。
-* onSurfaceChanged:如果设备支持屏幕横向和纵向切换，这个方法将发生在横向<->纵向互换时。此时可以重新设置绘制的纵横比率。  
-* 
+- onSurfaceCreated：在这个方法中主要用来设置一些绘制时不常变化的参数，比如：背景色，是否打开 z-buffer 等。
+- onDrawFrame：定义实际的绘图操作。
+- onSurfaceChanged：如果设备支持屏幕横向和纵向切换，这个方法将发生在横向 `<->` 纵向互换时。此时可以重新设置绘制的纵横比率。  
+
 有了上面的基本定义，可以写出一个 OpenGL ES 应用的通用框架。
 
-创建一个新的 Android 项目:OpenGLESTutorial, 在项目在添加两个类TutorialPartI.java 和 OpenGLRenderer.java.
+创建一个新的 Android 项目：OpenGLESTutorial, 在项目在添加两个类 TutorialPartI.java 和 OpenGLRenderer.java
 
 具体代码如下：
 
-TutorialPartI.java
+`TutorialPartI.java`
 
 ```
 public class TutorialPartI extends Activity {
@@ -102,6 +102,6 @@ public class OpenGLRenderer implements Renderer {
 }  
 ```  
 
-编译后运行，屏幕显示一个黑色的全屏。这两个类定义了 Android OpenGL ES 应用的最基本的类和方法，可以看作是 OpenGL ES 的”Hello ,world”应用，后面将逐渐丰富这个例子来画出3D图型。
+编译后运行，屏幕显示一个黑色的全屏。这两个类定义了 Android OpenGL ES 应用的最基本的类和方法，可以看作是 OpenGL ES 的”Hello ,world”应用，后面将逐渐丰富这个例子来画出 3D 图型。
 
 框架代码[下载](http://www.imobilebbs.com/download/android/opengles/OpenGLESTutorialTemplate.zip)：可以作为你自己的 OpenGL 3D 的初始代码。

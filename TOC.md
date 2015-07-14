@@ -1,5 +1,5 @@
-- [概述](new-document-one.md)    
-- [构造 OpenGL ES View](new-document-two.md)
+- [概述](overview.md)    
+- [构造 OpenGL ES View](opengl-es-view.md)
 - [3D 绘图基本概念](new-document-three.md) 
 - [3D 坐标变换](new-document-four.md)
 - [添加颜色](new-document-five.md)
